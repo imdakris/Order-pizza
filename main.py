@@ -1,6 +1,6 @@
 def new_order() -> bool:
     """New order"""
-    answer = input(f"Will you be placing a new order?; y/n")
+    answer = input("Will you be placing a new order?; y/n")
     if answer == "y":
         return False
     elif answer == "n":
@@ -8,7 +8,7 @@ def new_order() -> bool:
 
 
 def get_order(ingredients: list) -> list:
-    '''Get order'''
+    """Get order"""
     order = []
     for ingredient in ingredients:
         command = input(f"Add {ingredient}; y/n: ")
@@ -18,7 +18,7 @@ def get_order(ingredients: list) -> list:
 
 
 def check_order(order: list) -> bool:
-    '''Check order'''
+    """Check order"""
     if not order:
         print("You haven't ordered anything")
         return new_order()
@@ -33,14 +33,12 @@ def check_order(order: list) -> bool:
 
 
 def main() -> None:
-    '''Main'''
+    """Main"""
     while True:
         ingredients = ["tomatoes", "mushrooms", "cheese", "sausage", "olives"]
         order = get_order(ingredients)
         if check_order(order):
             exit()
-
-
 
 
 if __name__ == "__main__":
